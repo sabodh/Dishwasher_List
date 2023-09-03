@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Online &amp; Partners</string>
+    <string name="product_info">Product information</string>
+    <string name="adjustable_racking_info">Adjustable racking Information</string>
+    <string name="product_code">Product code</string>
+
+    <string name="product_specification">Product specification</string>
+    <string name="child_lock">Child lock Door &amp; control lock Daily Start</string>
+    <string name="delay_wash">Delay Wash</string>
+    <string name="delicate_wash">Delicate Wash</string>
+    <string name="read_more">Read More</string>
+
+    <string name="dimensions">Dimensions</string>
+    <string name="drying_performance">Drying performance</string>
+    <string name="drying_system">Drying system</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="dish_washers">Dishwashers(%1$d)</string>
+    <string name="network_error">Network connection lost!.</string>
+    <string name="title_activity_main">MainActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+</resources>

@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fillViewport="false"
+    tools:context=".presentation.ProductFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/imageSlider"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/constraintView"
+            app:layout_constraintDimensionRatio="16:14"
+            app:layout_constraintEnd_toEndOf="@+id/guidelineVertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Guideline for 65% screen height for slider images-->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineVertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.65" />
+
+        <View
+            android:id="@+id/verticalLine"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:background="@color/black_light"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guidelineVertical"
+            app:layout_constraintStart_toStartOf="@id/guidelineVertical"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Guideline for 35% screen height for slider images-->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.35" />
+        <!--  amount -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtAmount"
+            style="@style/BlackText.Large"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:paddingStart="30dp"
+            android:paddingTop="15dp"
+            android:text="£489.00"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/guidelineVertical"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--  info -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtInfo"
+            style="@style/BlackText.Small"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="left"
+            android:justificationMode="inter_word"
+            android:paddingStart="30dp"
+            android:paddingEnd="30dp"
+            android:text="Product information about loading product"
+            android:textColor="@color/red_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/guidelineVertical"
+            app:layout_constraintTop_toBottomOf="@+id/txtAmount" />
+
+        <!--Warranty -->
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtWarranty"
+            style="@style/BlackText.Small"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:justificationMode="inter_word"
+
+            android:paddingStart="30dp"
+            android:paddingTop="2dp"
+            android:paddingEnd="30dp"
+            android:text="Two year extended warranty available,Two year extended warranty available,Two year extended warranty available"
+            android:textColor="@color/teal_700"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/guidelineVertical"
+            app:layout_constraintTop_toBottomOf="@+id/txtInfo" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/guidelineVertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/guideline_">
+
+
+            <!--info Header -->
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtInfoHeader"
+                style="@style/BlackText.Large"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:padding="20dp"
+                android:text="@string/product_info"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <!--productCode -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtProductCode"
+                style="@style/BlackText.MinLevel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:text="@string/product_code"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtInfoHeader" />
+
+
+            <!--info Summary -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtSummary"
+                style="@style/BlackText.MinLevel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:justificationMode="inter_word"
+                android:maxLines="5"
+                android:padding="20dp"
+
+                android:text="@string/product_info"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtProductCode" />
+
+
+            <View
+                android:id="@+id/codeReadMore"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="8dp"
+                android:visibility="visible"
+                android:background="@color/black_light"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtSummary" />
+
+            <!--product read more -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtReadMore"
+                style="@style/BlackText.MidLevel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:text="@string/read_more"
+                android:visibility="visible"
+                android:drawableRight="@drawable/arrow_forward"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/codeReadMore" />
+
+
+            <View
+                android:id="@+id/codeLine"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/black_light"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtReadMore" />
+
+            <!--product Spec Header -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtSpecHeader"
+                style="@style/BlackText.Large"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:text="@string/product_specification"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/codeLine" />
+
+            <View
+                android:id="@+id/codeSpecHeader"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/black_light"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtSpecHeader" />
+
+            <!--tracking info -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtRackingInfo"
+                style="@style/BlackText.MinLevel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:text="@string/adjustable_racking_info"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/codeSpecHeader" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtRackingInfoValue"
+                style="@style/BlackText.MinLevel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:text="@string/yes"
+                app:layout_constraintEnd_toEndOf="@+id/txtRackingInfo"
+                app:layout_constraintTop_toBottomOf="@+id/codeSpecHeader" />
+
+            <View
+                android:id="@+id/codeRackingInfo"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/black_light"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtRackingInfo" />
+
+            <!--child lock -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtChildLock"
+                style="@style/BlackText.MinLevel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:text="@string/child_lock"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/codeRackingInfo" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtChildLockValue"
+                style="@style/BlackText.MinLevel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:text="@string/yes"
+                app:layout_constraintEnd_toEndOf="@+id/txtChildLock"
+                app:layout_constraintTop_toBottomOf="@+id/codeRackingInfo" />
+
+            <View
+                android:id="@+id/codeChildLock"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/black_light"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtChildLock" />
+
+            <!--Daily Wash -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtDelayWash"
+                style="@style/BlackText.MinLevel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:text="@string/delay_wash"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/codeChildLock" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtDelayWashValue"
+                style="@style/BlackText.MinLevel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:text="@string/yes"
+                app:layout_constraintEnd_toEndOf="@+id/txtDelayWash"
+                app:layout_constraintTop_toBottomOf="@+id/codeChildLock" />
+
+            <View
+                android:id="@+id/codeDelayWashValue"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/black_light"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtDelayWash" />
+
+            <!--delicate wash -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtDelicateWash"
+                style="@style/BlackText.MinLevel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:text="@string/delicate_wash"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/codeDelayWashValue" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtDelicateWashValue"
+                style="@style/BlackText.MinLevel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:text="@string/yes"
+                app:layout_constraintEnd_toEndOf="@+id/txtDelicateWash"
+                app:layout_constraintTop_toBottomOf="@+id/codeDelayWashValue" />
+
+            <View
+                android:id="@+id/codeDelicateWash"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/black_light"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtDelicateWash" />
+
+            <!--dimensions -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtDimensions"
+                style="@style/BlackText.MinLevel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:text="@string/dimensions"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/codeDelicateWash" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtDimensionsValue"
+                style="@style/BlackText.MinLevel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:text="@string/dimensions"
+                app:layout_constraintEnd_toEndOf="@+id/txtDimensions"
+                app:layout_constraintTop_toBottomOf="@+id/codeDelicateWash" />
+
+            <View
+                android:id="@+id/codeDimensions"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/black_light"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtDimensions" />
+
+
+            <!--drying performance -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtDryingPerformance"
+                style="@style/BlackText.MinLevel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:text="@string/drying_performance"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/codeDimensions" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtDryingPerformanceValue"
+                style="@style/BlackText.MinLevel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:padding="20dp"
+                android:text="@string/yes"
+                app:layout_constraintEnd_toEndOf="@+id/txtDryingPerformance"
+                app:layout_constraintTop_toBottomOf="@+id/codeDimensions" />
+
+            <View
+                android:id="@+id/codeDryingPerformance"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/black_light"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtDryingPerformance" />
+
+
+            <!--productCode -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtDryingSystem"
+                style="@style/BlackText.MinLevel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:text="@string/drying_system"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/codeDryingPerformance" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtDryingSystemValue"
+                style="@style/BlackText.MinLevel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:padding="20dp"
+                android:text="@string/yes"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/codeDryingPerformance" />
+
+            <View
+                android:id="@+id/codeDryingSystem"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/black_light"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtDryingSystem" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
