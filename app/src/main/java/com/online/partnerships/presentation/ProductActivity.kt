@@ -87,11 +87,12 @@ class ProductActivity : AppCompatActivity() {
     private fun listProducts(products: ArrayList<Products>) {
         // Getting the product grid visibility cout based on screen resolution
         SPAN_COUNT = ScreenUtils.getGridCount(this)
-        val adapter = ProductAdapter(products)
+        val adapter = ProductAdapter(::onProductItemClick)
         binding?.recyclerView?.layoutManager = GridLayoutManager(this, SPAN_COUNT)
         binding?.recyclerView?.adapter = adapter
         binding?.recyclerView?.visibility = View.VISIBLE
         dishWasherCount = products.size
+        adapter.submitList(products)
     }
 
     fun setHeader(header: String, gravity: Int, visibility: Int) {
@@ -142,6 +143,20 @@ class ProductActivity : AppCompatActivity() {
             setBackgroundDrawable(AppCompatResources.getDrawable(baseContext, R.color.white))
             setCustomView(actionbarBinding?.root)
         }
+    }
+    private fun onProductItemClick(product: Products){
+        navigateToDetails(product)
+    }
+    private fun navigateToDetails(product: Products) {
+        val fragment = ProductFragment()
+        val bundle = Bundle()
+        bundle.putString(Constants.BUNDLE_PRODUCT_ID, product.productId)
+        bundle.putString(Constants.BUNDLE_PRODUCT_PRICE, product.variantPriceRange?.display?.min)
+        fragment.arguments = bundle
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.rootView, fragment)
+            .addToBackStack(Constants.FRAGMENT_TAG)
+            .commit()
     }
 
 }
